@@ -1,38 +1,214 @@
-.App {
-  text-align: center;
+:root {
+    --primary-color: #F1F1F1;
+    --secondary-color: #D9D9D9;
+}
+body {
+    background-color: var(--primary-color);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Top Bar Start */
+.container {
+    max-height: 100vh;
+    overflow: hidden;
+    background-color: var(--primary-color);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.nav-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    padding: 0px 5%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.icon {
+    font-size: 24px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.title-name {
+    font-weight: 500;
+    font-size: 18px;
+}
+
+.profile-image {
+    background-color: var(--secondary-color);
+    height: 34px;
+    width: 34px;
+    border-radius: 50%;
+}
+
+/* Content Start */
+.contant-area {
+    display: flex;
+    justify-content: center;
+    padding: 40px 5%;
+    height: 75vh;
+}
+
+.border-area {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--secondary-color);
+    padding: 10px;
+    border-radius: 20px;
+    gap: 20px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.result-area h1{
+    font-size: 14px;
+    font-weight: 400;
+    justify-content: end;
+    height: 350px;
+    overflow: auto;
+    word-break: break-all;
+    white-space: normal;
+    margin: 20px 200px 0px 200px;
+}
+
+.prompt-area {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    height: 300px;
+}
+
+.prompt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.prompt-text {
+    width: 700px;
+    padding: 15px 25px;
+    border: none;
+    border-radius: 50px;
+    outline: none;
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+}
+
+.prompt-text:focus {
+    border: 1px solid gray;
+    background-color: #fff;
+}
+
+.prompt-text:hover {
+    background-color: #fff;
+}
+  
+.prompt-button {
+    padding: 13px;
+    background-color: var(--primary-color);
+    border: 1px solid var(--primary-color);
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 24px;
+}
+  
+.prompt-button:hover {
+    background-color: #fff;
+}
+
+.prompt-button:active {
+    border: 1px solid gray;
+}
+
+.prompt-area p {
+    font-size: 12px;
+    padding: 5px;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+  
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+  
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 5px;
+}
+  
+::-webkit-scrollbar-thumb:active {
+    background: #666;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--primary-color);
+}
+
+::-webkit-scrollbar-corner {
+    background: var(--primary-color);
+}
+/* Content End */
+
+@media (max-width: 1382px) {
+    .result-area h1{
+        height: 250px;
+        margin: 20px 40px 0px 40px;
+    }
+    .prompt-area {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 992px) {
+    .prompt {
+        gap: 20px;
+    }
+    
+    .prompt-text {
+        width: 500px;
+    }
+}
+
+@media (max-width: 768px) {
+    .prompt-text {
+        width: 360px;
+    }
+    .prompt-area p {
+        font-size: 10px;
+    }
+    .result-area h1{
+        margin: 10px 20px 0px 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .prompt-text {
+        width: 160px;
+    }
+    .prompt-area p {
+        font-size: 8px;
+        text-align: center;
+    }
+    .result-area h1{
+        margin: 10px;
+    }
+    .prompt {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 320px) {
+    .prompt-text {
+        width: 100px;
+    }
 }
